@@ -1,0 +1,13 @@
+// После создания colorMapм не забываем подключить в service.scss
+
+$colorMap: (
+  light: #ddd,
+);
+
+// Подключаем функцию color которая принимает key
+
+@function color($key) {
+  // и через map-get возвращает цвет
+
+  @return map-get($colorMap, $key);
+}
