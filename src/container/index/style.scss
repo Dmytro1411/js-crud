@@ -1,0 +1,69 @@
+// Подключаем service через use
+
+@use '../../lib/service.scss' as s;
+
+// Создаем стилизацию
+.form {
+  display: flex;
+  flex-direction: column; // Отвечает за построение в столбик
+  padding: s.space(4); // Отвечает за отступы
+  gap: s.space(8);
+
+  // Создаем стилизацию для title, где символ & прописывается вместо form
+  &__title {
+    font-size: 20px; // Отвечает за размер шрифта
+    font-weight: bold; // Отвечает за толщину линии букв
+    padding-bottom: s.space(
+      1
+    ); // Отвечает за отступ нижней границы
+    /* После создания colorMap вместо кода:
+    border-bottom: 1px solid #ddd; // Отвечает за цвет нижней границы
+	пишем следующий код: */
+    border-bottom: 1px solid s.color('light');
+  }
+
+  // реализовываем form__contant
+  &__content {
+    display: grid;
+    gap: s.space(6);
+  }
+
+  // реализовываем form__field, где размещаем стили для нового пользователя
+  &__field {
+    display: flex;
+    flex-direction: column; // Этим мы размещаем поле-ввода непосредственно под названием этого поля
+    gap: s.space(2);
+  }
+
+  // реализовываем form__label, стили которого отвечают за наименования полей-ввода
+  &__label {
+    font-size: 14px;
+  }
+
+  // реализовываем form__input, стили которого отвечают за стилизацию самих полей-вводов
+  &__input {
+    border: 1px solid s.color('light');
+    padding: s.space(2);
+  }
+
+  // реализовываем form__button
+  &__button {
+    border: 1px solid s.color('light');
+    padding: s.space(2);
+    border-radius: 20px;
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: s.space(10);
+}
+
+.user-list {
+  li {
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
